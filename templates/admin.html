@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - School Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>School Election 2025</h1>
+            <p>Admin Dashboard</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="admin-container fade-in">
+                <div class="admin-header">
+                    <h2 class="admin-title">Election Results Dashboard</h2>
+                    <a href="/download_csv" class="btn btn-secondary">Download CSV</a>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total Votes</h3>
+                        <div class="number">{{ total_votes }}</div>
+                    </div>
+                    
+                    {% for house, count in house_counts.items() %}
+                    <div class="stat-card">
+                        <h3>{{ house }} House</h3>
+                        <div class="number">{{ count }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="admin-section">
+                    <h3>President Election Results</h3>
+                    <div style="height: 300px;">
+                        <canvas id="presidentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Vice President Election Results</h3>
+                    <div style="height: 300px;">
+                        <canvas id="vicePresidentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Secretary Election Results</h3>
+                    <div style="height: 300px;">
+                        <canvas id="secretaryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Voting Records</h3>
+                    <div style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>House</th>
+                                    <th>President Vote</th>
+                                    <th>Vice President Vote</th>
+                                    <th>Secretary Vote</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for vote in votes_data %}
+                                <tr>
+                                    <td>{{ vote.timestamp }}</td>
+                                    <td>{{ vote.name }}</td>
+                                    <td>{{ vote.phone }}</td>
+                                    <td>{{ vote.house }}</td>
+                                    <td>{{ vote.position1_vote }}</td>
+                                    <td>{{ vote.position2_vote }}</td>
+                                    <td>{{ vote.position3_vote }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-section" style="text-align: center;">
+                    <a href="/" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 School Voting System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Charts for visualization
+        window.onload = function() {
+            // President Chart
+            const presidentCtx = document.getElementById('presidentChart').getContext('2d');
+            const presidentData = {
+                labels: [{% for candidate, votes in position1_counts.items() %}'{{ candidate }}',{% endfor %}],
+                datasets: [{
+                    label: 'Votes',
+                    data: [{% for candidate, votes in position1_counts.items() %}{{ votes }},{% endfor %}],
+                    backgroundColor: [
+                        'rgba(10, 36, 99, 0.7)',
+                        'rgba(255, 196, 54, 0.7)',
+                        'rgba(216, 17, 89, 0.7)',
+                        'rgba(40, 167, 69, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(10, 36, 99, 1)',
+                        'rgba(255, 196, 54, 1)',
+                        'rgba(216, 17, 89, 1)',
+                        'rgba(40, 167, 69, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            new Chart(presidentCtx, {
+                type: 'bar',
+                data: presidentData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Vice President Chart
+            const vicePresidentCtx = document.getElementById('vicePresidentChart').getContext('2d');
+            const vicePresidentData = {
+                labels: [{% for candidate, votes in position2_counts.items() %}'{{ candidate }}',{% endfor %}],
+                datasets: [{
+                    label: 'Votes',
+                    data: [{% for candidate, votes in position2_counts.items() %}{{ votes }},{% endfor %}],
+                    backgroundColor: [
+                        'rgba(10, 36, 99, 0.7)',
+                        'rgba(255, 196, 54, 0.7)',
+                        'rgba(216, 17, 89, 0.7)',
+                        'rgba(40, 167, 69, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(10, 36, 99, 1)',
+                        'rgba(255, 196, 54, 1)',
+                        'rgba(216, 17, 89, 1)',
+                        'rgba(40, 167, 69, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            new Chart(vicePresidentCtx, {
+                type: 'bar',
+                data: vicePresidentData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Secretary Chart
+            const secretaryCtx = document.getElementById('secretaryChart').getContext('2d');
+            const secretaryData = {
+                labels: [{% for candidate, votes in position3_counts.items() %}'{{ candidate }}',{% endfor %}],
+                datasets: [{
+                    label: 'Votes',
+                    data: [{% for candidate, votes in position3_counts.items() %}{{ votes }},{% endfor %}],
+                    backgroundColor: [
+                        'rgba(10, 36, 99, 0.7)',
+                        'rgba(255, 196, 54, 0.7)',
+                        'rgba(216, 17, 89, 0.7)',
+                        'rgba(40, 167, 69, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(10, 36, 99, 1)',
+                        'rgba(255, 196, 54, 1)',
+                        'rgba(216, 17, 89, 1)',
+                        'rgba(40, 167, 69, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            new Chart(secretaryCtx, {
+                type: 'bar',
+                data: secretaryData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>

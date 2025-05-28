@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Secretary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>School Election 2025</h1>
+            <p>Cast your vote for student leaders</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="position-indicator fade-in">
+                <h2>Vote for Secretary</h2>
+                <div class="progress-container">
+                    <div class="step-dots">
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot active"></div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="voteForm" action="/submit_vote3" method="POST">
+                <div class="candidates-container">
+                    <div class="candidate-card fade-in" style="animation-delay: 0.1s;">
+                        <img src="/image/person1 copy.jpg" alt="asd" class="candidate-image">
+                        <div class="candidate-info">
+                            <h3>asd</h3>
+                            <div class="candidate-role">Junior, Yearbook Editor</div>
+                            <p>Olivia plans to improve organization of school events and enhance communication between different student groups.</p>
+                            <div class="vote-button">
+                                <input type="radio" name="candidate" id="candidate1" value="asd" required>
+                                <label for="candidate1">Vote</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="candidate-card fade-in" style="animation-delay: 0.2s;">
+                        <img src="/image/person6.jpg" alt="q" class="candidate-image">
+                        <div class="candidate-info">
+                            <h3>q</h3>
+                            <div class="candidate-role">Senior, Computer Club President</div>
+                            <p>Jason aims to digitize more school processes and create better documentation of student council activities.</p>
+                            <div class="vote-button">
+                                <input type="radio" name="candidate" id="candidate2" value="q" required>
+                                <label for="candidate2">Vote</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 School Voting System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-submit when a candidate is selected
+        document.querySelectorAll('input[name="candidate"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('voteForm').submit();
+            });
+        });
+    </script>
+</body>
+</html>

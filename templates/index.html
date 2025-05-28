@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Voting System - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>School Election 2025</h1>
+            <p>Cast your vote for student leaders</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="login-form fade-in">
+                <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">Login to Vote</h2>
+                
+                {% if error %}
+                <div class="error-message">{{ error }}</div>
+                {% endif %}
+                
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="house">Select Your House</label>
+                        <select id="house" name="house" class="form-control" required>
+                            <option value="" disabled selected>Choose your house</option>
+                            <option value="Red">Red House</option>
+                            <option value="Blue">Blue House</option>
+                            <option value="Green">Green House</option>
+                            <option value="Yellow">Yellow House</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 School Voting System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const house = document.getElementById('house').value;
+            
+            if (name === '' || phone === '' || house === '') {
+                e.preventDefault();
+                alert('Please fill out all fields.');
+                return;
+            }
+            
+            if (phone.length !== 10 || isNaN(phone)) {
+                e.preventDefault();
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+        });
+    </script>
+</body>
+</html>
