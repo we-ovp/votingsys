@@ -1,0 +1,97 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>Common Voting</title></head>
+<body>
+<h2>Common Positions</h2>
+<form method="POST">
+{% for role, candidates in candidates.items() %}
+    <h3>{{ role.replace('_', ' ').title() }}</h3>
+    {% for candidate in candidates %}
+        <input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}<br>
+    {% endfor %}
+{% endfor %}
+    <input type="submit" value="Next">
+</form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Common Voting</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            padding: 40px;
+            margin: 0;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #d03333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            background-color: #d03333;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b52a2a;
+        }
+    </style>
+</head>
+<body>
+    <h2>Common Positions</h2>
+    <form method="POST">
+        {% for role, candidates in candidates.items() %}
+            <h3>{{ role.replace('_', ' ').title() }}</h3>
+            {% for candidate in candidates %}
+                <label><input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}</label>
+            {% endfor %}
+        {% endfor %}
+        <input type="submit" value="Next">
+    </form>
+</body>
+</html>

@@ -1,196 +1,122 @@
-from flask import Flask, render_template, request, redirect, session, send_file
+from flask import Flask, render_template, request, redirect, session
 import os
-import csv
-from datetime import datetime
 import json
 
 app = Flask(__name__)
-app.secret_key = "schoolvotingsystem"  # Secret key for session
+app.secret_key = 'supersecretkey'
 
-# Create record.csv if it doesn't exist
-if not os.path.exists('record.csv'):
-    with open('record.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['timestamp', 'name', 'phone', 'house', 'position1_vote', 'position2_vote', 'position3_vote'])
+# Load candidates
+with open('candidates.json') as f:
+    CANDIDATES = json.load(f)
 
-# Create voters.json if it doesn't exist
-if not os.path.exists('voters.json'):
-    with open('voters.json', 'w') as file:
-        json.dump([], file)
+# Create results.json if not exists
+if not os.path.exists('results.json'):
+    results = {}
+    for group in CANDIDATES.values():
+        for role, candidates in group.items():
+            if role not in results:
+                results[role] = {}
+            for candidate in candidates:
+                if isinstance(candidate, dict) and "name" in candidate:
+                    results[role][candidate["name"]] = 0
+                elif isinstance(candidate, str):
+                    results[role][candidate] = 0
+    with open('results.json', 'w') as f:
+        json.dump(results, f, indent=4)
+
+# Load voters
+with open('voters.json') as f:
+    VOTERS = json.load(f)
 
 @app.route('/')
 def index():
-    if 'logged_in' in session:
-        session.clear()  # Clear any existing session
+    session.clear()
     return render_template('index.html')
 
 @app.route('/login', methods=['POST'])
 def login():
-    name = request.form.get('name')
-    phone = request.form.get('phone')
-    house = request.form.get('house')
-    
-    # Check if admin login
-    if name == 'admin' and phone == '1234567890':
-        session['is_admin'] = True
-        return redirect('/admin')
-    
-    # Check if user has already voted
-    with open('voters.json', 'r') as file:
-        voters = json.load(file)
-        
-    for voter in voters:
-        if voter['phone'] == phone:
-            return render_template('index.html', error="You have already voted.")
-    
-    # Add user to session
-    session['logged_in'] = True
-    session['name'] = name
-    session['phone'] = phone
-    session['house'] = house
-    session['votes'] = {}
-    
-    return redirect('/voting1')
+    username = request.form['username']
+    password = request.form['password']
+    user = next((v for v in VOTERS if v['username'] == username and v['password'] == password), None)
 
-@app.route('/voting1')
-def voting1():
-    if 'logged_in' not in session:
-        return redirect('/')
-    return render_template('voting1.html')
+    if user:
+        if user.get('voted') and username != 'admin':
+            return render_template('index.html', error='You have already voted.')
+        session['user'] = user
+        if username == 'admin':
+            return redirect('/admin')
+        return redirect('/voting_common')
+    return render_template('index.html', error='Invalid credentials.')
 
-@app.route('/submit_vote1', methods=['POST'])
-def submit_vote1():
-    if 'logged_in' not in session:
+@app.route('/voting_common', methods=['GET', 'POST'])
+def voting_common():
+    if 'user' not in session:
         return redirect('/')
-    
-    selected_candidate = request.form.get('candidate')
-    session['votes']['position1'] = selected_candidate
-    
-    return redirect('/voting2')
+    if request.method == 'POST':
+        session['votes'] = request.form.to_dict()
+        return redirect('/voting_house')
+    return render_template('voting_common.html', candidates=CANDIDATES["common"])
 
-@app.route('/voting2')
-def voting2():
-    if 'logged_in' not in session:
+@app.route('/voting_house', methods=['GET', 'POST'])
+def voting_house():
+    if 'user' not in session:
         return redirect('/')
-    return render_template('voting2.html')
+    house = session['user'].get('house')
+    if house not in CANDIDATES:
+        return redirect('/thanks')  # Skip if house is invalid or not found
+    if request.method == 'POST':
+        session['votes'].update(request.form.to_dict())
+        with open('results.json') as f:
+            results = json.load(f)
 
-@app.route('/submit_vote2', methods=['POST'])
-def submit_vote2():
-    if 'logged_in' not in session:
-        return redirect('/')
-    
-    selected_candidate = request.form.get('candidate')
-    session['votes']['position2'] = selected_candidate
-    
-    return redirect('/voting3')
+        for role, candidate in session['votes'].items():
+            if role not in results:
+                results[role] = {}
+            if candidate not in results[role]:
+                results[role][candidate] = 0
+            results[role][candidate] += 1
 
-@app.route('/voting3')
-def voting3():
-    if 'logged_in' not in session:
-        return redirect('/')
-    return render_template('voting3.html')
+        with open('results.json', 'w') as f:
+            json.dump(results, f, indent=4)
 
-@app.route('/submit_vote3', methods=['POST'])
-def submit_vote3():
-    if 'logged_in' not in session:
-        return redirect('/')
-    
-    selected_candidate = request.form.get('candidate')
-    session['votes']['position3'] = selected_candidate
-    
-    # Record vote in CSV
-    with open('record.csv', 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            session['name'],
-            session['phone'],
-            session['house'],
-            session['votes'].get('position1', ''),
-            session['votes'].get('position2', ''),
-            session['votes'].get('position3', '')
-        ])
-    
-    # Record voter to prevent re-voting
-    with open('voters.json', 'r') as file:
-        voters = json.load(file)
-    
-    voters.append({
-        'name': session['name'],
-        'phone': session['phone'],
-        'house': session['house']
-    })
-    
-    with open('voters.json', 'w') as file:
-        json.dump(voters, file)
-    
-    return redirect('/thanks')
+        for v in VOTERS:
+            if v['username'] == session['user']['username']:
+                v['voted'] = True
+        with open('voters.json', 'w') as f:
+            json.dump(VOTERS, f, indent=4)
+
+        return redirect('/thanks')
+    return render_template('voting_house.html', candidates=CANDIDATES.get(house, {}))
 
 @app.route('/thanks')
 def thanks():
-    if 'logged_in' not in session:
-        return redirect('/')
-    
-    # Clear session after displaying thanks
-    name = session.get('name', '')
+    name = session.get('user', {}).get('username', 'Voter')
     session.clear()
-    
     return render_template('thanks.html', name=name)
 
 @app.route('/admin')
 def admin():
-    if 'is_admin' not in session:
+    if session.get('user', {}).get('username') != 'admin':
         return redirect('/')
-    
-    # Read record.csv for displaying results
-    votes_data = []
-    try:
-        with open('record.csv', 'r', newline='') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                votes_data.append(row)
-    except:
-        pass
-    
-    # Calculate statistics
-    total_votes = len(votes_data)
-    house_counts = {}
-    position1_counts = {}
-    position2_counts = {}
-    position3_counts = {}
-    
-    for vote in votes_data:
-        # Count by house
-        house = vote.get('house', 'Unknown')
-        house_counts[house] = house_counts.get(house, 0) + 1
-        
-        # Count by position votes
-        pos1 = vote.get('position1_vote', 'None')
-        position1_counts[pos1] = position1_counts.get(pos1, 0) + 1
-        
-        pos2 = vote.get('position2_vote', 'None')
-        position2_counts[pos2] = position2_counts.get(pos2, 0) + 1
-        
-        pos3 = vote.get('position3_vote', 'None')
-        position3_counts[pos3] = position3_counts.get(pos3, 0) + 1
-    
-    return render_template('admin.html', 
-                          votes_data=votes_data, 
-                          total_votes=total_votes,
-                          house_counts=house_counts,
-                          position1_counts=position1_counts,
-                          position2_counts=position2_counts,
-                          position3_counts=position3_counts)
+    with open('results.json') as f:
+        results = json.load(f)
+    return render_template('admin.html', results=results)
 
-@app.route('/download_csv')
-def download_csv():
-    if 'is_admin' not in session:
-        return redirect('/')
-    
-    return send_file('record.csv',
-                     mimetype='text/csv',
-                     download_name='voting_records.csv',
-                     as_attachment=True)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
+
+
+# format
+    # "common": {
+    #     "president": 0,
+    #     "boy_prefect": 0,
+    #     "girl_prefect": 0
+    # },
+    # "oak": {
+    #     "oak_house_captain": 0,
+    #     "oak_vice_captain": 0
+    # },
+    # "pine": {
+    #     "pine_house_captain": 0,
+    #     "pine_vice_captain": 0
+    # },

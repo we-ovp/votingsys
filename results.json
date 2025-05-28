@@ -1,0 +1,43 @@
+{
+    "boy_prefect": {
+        "David": 4,
+        "Charlie": 3
+    },
+    "girl_prefect": {
+        "Fiona": 2,
+        "Eve": 5
+    },
+    "president": {
+        "Alice": 5,
+        "Bob": 2
+    },
+    "oak_house_captain": {
+        "Yasmine": 2
+    },
+    "oak_vice_captain": {
+        "Zack": 1,
+        "Luna": 1
+    },
+    "pine_house_captain": {
+        "Chloe": 1,
+        "Henry": 1
+    },
+    "pine_vice_captain": {
+        "Jack": 1,
+        "Mia": 1
+    },
+    "maple_house_captain": {
+        "Sophie": 1,
+        "Liam": 1
+    },
+    "maple_vice_captain": {
+        "Noah": 1,
+        "Emily": 1
+    },
+    "cedar_house_captain": {
+        "Oliver": 1
+    },
+    "cedar_vice_captain": {
+        "Ava": 1
+    }
+}

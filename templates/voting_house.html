@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>House Voting</title></head>
+<body>
+<h2>House Positions</h2>
+<form method="POST">
+{% for role, candidates in candidates.items() %}
+    <h3>{{ role.replace('_', ' ').title() }}</h3>
+    {% for candidate in candidates %}
+        <input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}<br>
+    {% endfor %}
+{% endfor %}
+    <input type="submit" value="Submit Votes">
+</form>
+</body>
+</html>

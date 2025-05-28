@@ -1,0 +1,56 @@
+{
+    "common": {
+        "president": [
+            "Alice",
+            "Bob"
+        ],
+        "boy_prefect": [
+            "Charlie",
+            "David"
+        ],
+        "girl_prefect": [
+            "Eve",
+            "Fiona"
+        ]
+    },
+    "oak": {
+        "oak_house_captain": [
+            "Xander",
+            "Yasmine"
+        ],
+        "oak_vice_captain": [
+            "Zack",
+            "Luna"
+        ]
+    },
+    "pine": {
+        "pine_house_captain": [
+            "Henry",
+            "Chloe"
+        ],
+        "pine_vice_captain": [
+            "Jack",
+            "Mia"
+        ]
+    },
+    "maple": {
+        "maple_house_captain": [
+            "Liam",
+            "Sophie"
+        ],
+        "maple_vice_captain": [
+            "Noah",
+            "Emily"
+        ]
+    },
+    "cedar": {
+        "cedar_house_captain": [
+            "Oliver",
+            "Grace"
+        ],
+        "cedar_vice_captain": [
+            "James",
+            "Ava"
+        ]
+    }
+}

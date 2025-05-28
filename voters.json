@@ -1,1 +1,61 @@
-[{"name": "df", "phone": "4554454545", "house": "Red"}, {"name": "dynamo", "phone": "1234567777", "house": "Red"}]
+[
+    {
+        "username": "student1",
+        "password": "pass1",
+        "house": "oak",
+        "voted": true
+    },
+    {
+        "username": "student2",
+        "password": "pass2",
+        "house": "pine",
+        "voted": true
+    },
+    {
+        "username": "student3",
+        "password": "pass3",
+        "house": "maple",
+        "voted": false
+    },
+    {
+        "username": "admin",
+        "password": "adminpass",
+        "house": "admin"
+    },
+    {
+        "username": "student4",
+        "password": "pass4",
+        "house": "oak",
+        "voted": false
+    },
+    {
+        "username": "student5",
+        "password": "pass5",
+        "house": "cedar",
+        "voted": true
+    },
+    {
+        "username": "student6",
+        "password": "pass6",
+        "house": "maple",
+        "voted": false
+    },
+    {
+        "username": "student7",
+        "password": "pass7",
+        "house": "oak",
+        "voted": false
+    },
+    {
+        "username": "student8",
+        "password": "pass8",
+        "house": "pine",
+        "voted": false
+    },
+    {
+        "username": "student9",
+        "password": "pass9",
+        "house": "cedar",
+        "voted": false
+    }
+]

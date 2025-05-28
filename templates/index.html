@@ -1,82 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- templates/index.html -->
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Voting System - Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>Login</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>School Election 2025</h1>
-            <p>Cast your vote for student leaders</p>
-        </div>
-    </header>
+    <h1>Login</h1>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html> -->
 
-    <main>
-        <div class="container">
-            <div class="login-form fade-in">
-                <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">Login to Vote</h2>
-                
-                {% if error %}
-                <div class="error-message">{{ error }}</div>
-                {% endif %}
-                
-                <form action="/login" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="house">Select Your House</label>
-                        <select id="house" name="house" class="form-control" required>
-                            <option value="" disabled selected>Choose your house</option>
-                            <option value="Red">Red House</option>
-                            <option value="Blue">Blue House</option>
-                            <option value="Green">Green House</option>
-                            <option value="Yellow">Yellow House</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                </form>
-            </div>
-        </div>
-    </main>
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 School Voting System. All rights reserved.</p>
-        </div>
-    </footer>
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
 
-    <script>
-        // Form validation
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const house = document.getElementById('house').value;
-            
-            if (name === '' || phone === '' || house === '') {
-                e.preventDefault();
-                alert('Please fill out all fields.');
-                return;
-            }
-            
-            if (phone.length !== 10 || isNaN(phone)) {
-                e.preventDefault();
-                alert('Please enter a valid 10-digit phone number.');
-                return;
-            }
-        });
-    </script>
+        .left {
+            width: 50%;
+            background-color: #d9d9d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .left img.logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 200px;
+        }
+
+        .left img.illustration {
+            width: 60%;
+            max-width: 400px;
+        }
+
+        .right {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .right h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .right p {
+            color: #d03333;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .right h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            background-color: #e3e3e3;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #d03333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100px;
+            align-self: center;
+        }
+
+        p[style*="color:red"] {
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="/static/logo.png" alt="Logo" class="logo"> <!-- You must replace this with the actual logo path -->
+        <img src="/static/person-entering.png" alt="Illustration" class="illustration"> <!-- Replace with real illustration -->
+    </div>
+    <div class="right">
+        <h1>Welcome Back!</h1>
+        <p>Your vote, your power. Choose wisely.</p>
+        <h2>Teacher/Student Login</h2>
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Login ID" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
