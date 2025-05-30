@@ -105,18 +105,3 @@ def admin():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-# format
-    # "common": {
-    #     "president": 0,
-    #     "boy_prefect": 0,
-    #     "girl_prefect": 0
-    # },
-    # "oak": {
-    #     "oak_house_captain": 0,
-    #     "oak_vice_captain": 0
-    # },
-    # "pine": {
-    #     "pine_house_captain": 0,
-    #     "pine_vice_captain": 0
-    # },

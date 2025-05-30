@@ -1,97 +1,164 @@
-<!-- 
-<!DOCTYPE html>
-<html>
-<head><title>Common Voting</title></head>
-<body>
-<h2>Common Positions</h2>
-<form method="POST">
-{% for role, candidates in candidates.items() %}
-    <h3>{{ role.replace('_', ' ').title() }}</h3>
-    {% for candidate in candidates %}
-        <input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}<br>
-    {% endfor %}
-{% endfor %}
-    <input type="submit" value="Next">
-</form>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Common Voting</title>
+    <title>Voting...</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            padding: 40px;
+            background-color: #f5f5f5;
             margin: 0;
-            color: #333;
-        }
-
-        h2 {
-            font-size: 32px;
-            color: #d03333;
-            margin-bottom: 20px;
+            padding: 40px 0;
             text-align: center;
         }
 
-        h3 {
-            font-size: 24px;
-            margin-top: 30px;
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d03333;
             margin-bottom: 10px;
-            color: #444;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: #111;
         }
 
         form {
-            max-width: 600px;
-            margin: auto;
-            background-color: #fff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        input[type="radio"] {
-            margin-right: 10px;
+        .role-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
+        .role-section.active {
+            display: flex;
         }
 
-        input[type="submit"] {
-            margin-top: 30px;
-            background-color: #d03333;
-            color: white;
-            padding: 12px 24px;
+        .candidate-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin: 40px 0;
+        }
+
+        .candidate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .candidate input[type="radio"] {
+            display: none;
+        }
+
+        .candidate-box {
+            width: 150px;
+            height: 150px;
+            background-color: #e53935;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .candidate input[type="radio"]:checked + .candidate-box {
+            outline: 5px solid #000;
+            transform: scale(1.05);
+        }
+
+        .candidate-label {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .nav-button {
+            background-color: #e53935;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
             font-size: 16px;
             font-weight: bold;
-            border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            transition: background-color 0.3s;
         }
 
-        input[type="submit"]:hover {
-            background-color: #b52a2a;
+        .nav-button:hover {
+            background-color: #c62828;
+        }
+
+        #submit-button {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h2>Common Positions</h2>
-    <form method="POST">
+    <h2>Cast Your Vote</h2>
+    <form method="POST" id="votingForm">
         {% for role, candidates in candidates.items() %}
-            <h3>{{ role.replace('_', ' ').title() }}</h3>
-            {% for candidate in candidates %}
-                <label><input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}</label>
-            {% endfor %}
+            <div class="role-section" id="section-{{ loop.index0 }}">
+                <h3>{{ role.replace('_', ' ').title() }}</h3>
+                <div class="candidate-container">
+                    {% for candidate in candidates %}
+                        <label class="candidate">
+                            <input type="radio" name="{{ role }}" value="{{ candidate.name }}" required>
+                            <div class="candidate-box">
+                                <img src="{{ candidate.image }}" alt="{{ candidate.name }}" style="width:100%; height:100%; object-fit: cover; border-radius: 16px;">
+                            </div>
+                            <div class="candidate-label">{{ candidate.name }}</div>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
         {% endfor %}
-        <input type="submit" value="Next">
+        <button type="button" class="nav-button" id="nextBtn">Next</button>
+        <input type="submit" value="Submit" class="nav-button" id="submit-button">
     </form>
+
+    <script>
+        const sections = document.querySelectorAll('.role-section');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submit-button');
+        let current = 0;
+
+        function showSection(index) {
+            sections.forEach((sec, i) => {
+                sec.classList.toggle('active', i === index);
+            });
+
+            if (index === sections.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const inputs = sections[current].querySelectorAll('input[type="radio"]');
+            const selected = Array.from(inputs).some(input => input.checked);
+
+            if (!selected) {
+                alert("Please select a candidate before proceeding.");
+                return;
+            }
+
+            current++;
+            showSection(current);
+        });
+
+        // Initialize
+        showSection(0);
+    </script>
 </body>
 </html>

@@ -1,17 +1,172 @@
-
 <!DOCTYPE html>
 <html>
-<head><title>House Voting</title></head>
+<head>
+    <title>Voting...</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d03333;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: #111;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .role-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .role-section.active {
+            display: flex;
+        }
+
+        .candidate-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin: 40px 0;
+        }
+
+        .candidate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .candidate input[type="radio"] {
+            display: none;
+        }
+
+        .candidate-box {
+            width: 150px;
+            height: 150px;
+            background-color: #e53935;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .candidate-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .candidate input[type="radio"]:checked + .candidate-box {
+            outline: 5px solid #000;
+            transform: scale(1.05);
+        }
+
+        .candidate-label {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .nav-button {
+            background-color: #e53935;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #c62828;
+        }
+
+        #submit-button {
+            display: none;
+        }
+    </style>
+</head>
 <body>
-<h2>House Positions</h2>
-<form method="POST">
-{% for role, candidates in candidates.items() %}
-    <h3>{{ role.replace('_', ' ').title() }}</h3>
-    {% for candidate in candidates %}
-        <input type="radio" name="{{ role }}" value="{{ candidate }}" required>{{ candidate }}<br>
-    {% endfor %}
-{% endfor %}
-    <input type="submit" value="Submit Votes">
-</form>
+    <h2>House Positions</h2>
+    <form method="POST" id="votingForm">
+        {% for role, candidates in candidates.items() %}
+            <div class="role-section" id="section-{{ loop.index0 }}">
+                <h3>{{ role.replace('_', ' ').title() }}</h3>
+                <div class="candidate-container">
+                    {% for candidate in candidates %}
+                        {% set name = candidate.name if candidate is mapping else candidate %}
+                        {% set image = candidate.image if candidate is mapping else '/static/images/default.jpg' %}
+                        <label class="candidate">
+                            <input type="radio" name="{{ role }}" value="{{ name }}" required>
+                            <div class="candidate-box">
+                                <img src="{{ image }}" alt="{{ name }}">
+                            </div>
+                            <div class="candidate-label">{{ name }}</div>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <button type="button" class="nav-button" id="nextBtn">Next</button>
+        <input type="submit" value="Submit Votes" class="nav-button" id="submit-button">
+    </form>
+
+    <script>
+        const sections = document.querySelectorAll('.role-section');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submit-button');
+        let current = 0;
+
+        function showSection(index) {
+            sections.forEach((sec, i) => {
+                sec.classList.toggle('active', i === index);
+            });
+
+            if (index === sections.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const inputs = sections[current].querySelectorAll('input[type="radio"]');
+            const selected = Array.from(inputs).some(input => input.checked);
+
+            if (!selected) {
+                alert("Please select a candidate before proceeding.");
+                return;
+            }
+
+            current++;
+            showSection(current);
+        });
+
+        showSection(0);
+    </script>
 </body>
 </html>

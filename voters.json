@@ -32,7 +32,7 @@
         "username": "student5",
         "password": "pass5",
         "house": "cedar",
-        "voted": true
+        "voted": false
     },
     {
         "username": "student6",
