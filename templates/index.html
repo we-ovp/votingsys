@@ -49,8 +49,7 @@
         .left img.logo {
             position: absolute;
             top: 40px;
-            left: 40px;
-            width: 200px;
+            align-items: center;
         }
 
         .left img.illustration {
@@ -64,6 +63,7 @@
             flex-direction: column;
             justify-content: center;
             padding: 60px;
+            height: 100%;
         }
 
         .right h1 {
@@ -92,9 +92,11 @@
         input[type="text"], input[type="password"] {
             padding: 12px;
             font-size: 16px;
-            border-radius: 6px;
-            border: 1px solid #aaa;
-            background-color: #e3e3e3;
+            width: 40vw;
+            background-color: #ffffff;
+            align-self: center;
+            border: none;
+            border-bottom: 1px solid rgb(0, 0, 0);
         }
 
         button {
@@ -103,23 +105,34 @@
             font-weight: bold;
             background-color: #d03333;
             color: white;
-            border: none;
             border-radius: 6px;
             cursor: pointer;
-            width: 100px;
+            width: 40vw;
             align-self: center;
+            border: 1px solid #d03333;
         }
 
         p[style*="color:red"] {
             color: red;
             margin-bottom: 20px;
         }
+        button:hover{
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #d03333;
+            color: #d03333;
+            transition: 0.3s;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-bottom: 2px solid #d03333;
+            transition: ease 0.3s;
+        }
     </style>
 </head>
 <body>
     <div class="left">
-        <img src="/static/logo.png" alt="Logo" class="logo"> <!-- You must replace this with the actual logo path -->
-        <img src="/static/person-entering.png" alt="Illustration" class="illustration"> <!-- Replace with real illustration -->
+        <img src="images/logo.webp" alt="Logo" class="logo"> <!-- You must replace this with the actual logo path -->
+        <img src="images/login_img.png" alt="Illustration" class="illustration"> <!-- Replace with real illustration -->
     </div>
     <div class="right">
         <h1>Welcome Back!</h1>
@@ -130,7 +143,7 @@
         {% endif %}
         <form action="/login" method="POST">
             <input type="text" name="username" placeholder="Admission Number" required>
-            <input type="password" name="password" placeholder="Pin Code" required>
+            <input type="password" name="password" placeholder="Pin code" required>
             <button type="submit">Login</button>
         </form>
     </div>
