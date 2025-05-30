@@ -1,15 +1,11 @@
 {
     "common": {
-      "president": [
-        { "name": "Alice", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
-        { "name": "Bob", "image": "https://cdn.pfps.gg/pfps/3212-fight-club-pfp.png" }
-      ],
       "boy_prefect": [
         { "name": "Charlie", "image": "https://i.pinimg.com/736x/31/cc/a2/31cca25cf85c43aa7d59ad80573758e7.jpg" },
-        { "name": "David", "image": "https://i.pinimg.com/736x/b1/21/a4/b121a492a7fc993d7a35505e0976b9b2.jpg" }
+        { "name": "David", "image": "https://cdn.pfps.gg/pfps/3212-fight-club-pfp.png" }
       ],
       "girl_prefect": [
-        { "name": "Eve", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Eve", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
         { "name": "Fiona", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },

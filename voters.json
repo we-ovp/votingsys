@@ -26,13 +26,13 @@
         "username": "student4",
         "password": "pass4",
         "house": "oak",
-        "voted": false
+        "voted": true
     },
     {
         "username": "student5",
         "password": "pass5",
         "house": "cedar",
-        "voted": false
+        "voted": true
     },
     {
         "username": "student6",

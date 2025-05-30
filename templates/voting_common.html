@@ -5,10 +5,17 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
+            /* background-color: #f5f5f5; */
             margin: 0;
             padding: 40px 0;
             text-align: center;
+            min-height: 100vh;
+            background-image: url(https://www.yuvabharathi.in/images/gallery/overview/54.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(10px);
+            color: white;
         }
 
         h2 {
@@ -22,7 +29,7 @@
             font-size: 28px;
             font-weight: 600;
             margin-top: 10px;
-            color: #111;
+            color: #ffffff;
         }
 
         form {
@@ -61,8 +68,8 @@
         }
 
         .candidate-box {
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             background-color: #e53935;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -70,7 +77,11 @@
         }
 
         .candidate input[type="radio"]:checked + .candidate-box {
-            outline: 5px solid #000;
+            outline: 5px solid #e24444;
+            transform: scale(1.07);
+        }
+
+        .candidate-box:hover{
             transform: scale(1.05);
         }
 
@@ -102,7 +113,8 @@
     </style>
 </head>
 <body>
-    <h2>Cast Your Vote</h2>
+    
+    <h2>Cast Your Votes!</h2>
     <form method="POST" id="votingForm">
         {% for role, candidates in candidates.items() %}
             <div class="role-section" id="section-{{ loop.index0 }}">
@@ -123,6 +135,8 @@
         <button type="button" class="nav-button" id="nextBtn">Next</button>
         <input type="submit" value="Submit" class="nav-button" id="submit-button">
     </form>
+
+
 
     <script>
         const sections = document.querySelectorAll('.role-section');
