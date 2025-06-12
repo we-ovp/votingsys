@@ -1,53 +1,52 @@
 {
     "common": {
       "boy_prefect": [
-        { "name": "Charlie", "image": "https://i.pinimg.com/736x/31/cc/a2/31cca25cf85c43aa7d59ad80573758e7.jpg" },
-        { "name": "David", "image": "https://cdn.pfps.gg/pfps/3212-fight-club-pfp.png" }
+        { "name": "Moksh V Bhandari", "image": "https://i.pinimg.com/736x/31/cc/a2/31cca25cf85c43aa7d59ad80573758e7.jpg" },
+        { "name": "Ajay Jagath SK", "image": "https://cdn.pfps.gg/pfps/3212-fight-club-pfp.png" }
       ],
       "girl_prefect": [
-        { "name": "Eve", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
-        { "name": "Fiona", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Haritha Jaikumar", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
+        { "name": "Deeya Barik", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },
     "oak": {
       "oak_house_captain": [
-        { "name": "Xander", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Yasmine", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Haashini Priya CP", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Mythi", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ],
       "oak_vice_captain": [
-        { "name": "Zack", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Luna", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "oak vice captain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },
     "pine": {
       "pine_house_captain": [
-        { "name": "Henry", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Chloe", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Mahi Kishore Sethia", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Shri Varsha M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Samiksha Rajesh", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ],
       "pine_vice_captain": [
-        { "name": "Jack", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Mia", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Suryaa V", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Afsana Neha Rabbani", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },
     "maple": {
       "maple_house_captain": [
-        { "name": "Liam", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Sophie", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Prithvi GN", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
       ],
       "maple_vice_captain": [
-        { "name": "Noah", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Emily", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Ishan Jain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Sahana S", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },
     "cedar": {
       "cedar_house_captain": [
-        { "name": "Oliver", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Grace", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Pragadi N", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Prakalya M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ],
       "cedar_vice_captain": [
-        { "name": "James", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Ava", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Gaurav Agarwal", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Aninditha M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Laksh Jain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     }
   }
-  
