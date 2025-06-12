@@ -1,71 +1,777 @@
 [
     {
-        "username": "student1",
-        "password": "pass1",
-        "house": "oak",
-        "voted": false,
-        "realname": "Ethan Walker"
-    },
-    {
-        "username": "student2",
-        "password": "pass2",
-        "house": "pine",
-        "voted": false,
-        "realname": "Chloe Bennett"
-    },
-    {
-        "username": "student3",
-        "password": "pass3",
-        "house": "maple",
-        "voted": false,
-        "realname": "Lucas Hayes"
-    },
-    {
         "username": "admin",
         "password": "adminpass",
         "house": "admin"
     },
     {
-        "username": "student4",
-        "password": "pass4",
-        "house": "oak",
-        "voted": false,
-        "realname": "Ava Mitchell"
+      "username": "4245",
+      "password": "2615",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Abhinav G"
     },
     {
-        "username": "student5",
-        "password": "pass5",
-        "house": "cedar",
-        "voted": false,
-        "realname": "Mason Carter"
+      "username": "2025",
+      "password": "6477",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Abhinav Ramachandran"
     },
     {
-        "username": "student6",
-        "password": "pass6",
-        "house": "maple",
-        "voted": false,
-        "realname": "Harper Collins"
+      "username": "2696",
+      "password": "2559",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Abishek M"
     },
     {
-        "username": "student7",
-        "password": "pass7",
-        "house": "oak",
-        "voted": false,
-        "realname": "Liam Brooks"
+      "username": "2023",
+      "password": "2010",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Aditya Ashok"
     },
     {
-        "name": "hello",
-        "username": "student8",
-        "password": "pass8",
-        "house": "pine",
-        "voted": false,
-        "realname": "Isabella James"
+      "username": "2698",
+      "password": "2730",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Akshai S S"
     },
     {
-        "username": "student9",
-        "password": "pass9",
-        "house": "cedar",
-        "voted": false,
-        "realname": "Noah Thompson"
+      "username": "1996",
+      "password": "3972",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Athul Vinayak Pradeep"
+    },
+    {
+      "username": "3058",
+      "password": "9083",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Ayan S H"
+    },
+    {
+      "username": "2120",
+      "password": "8278",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Eashwari R"
+    },
+    {
+      "username": "2121",
+      "password": "7586",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Erlyn Leeshah B"
+    },
+    {
+      "username": "3298",
+      "password": "4169",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Gurucharan M"
+    },
+    {
+      "username": "3321",
+      "password": "1518",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Harrish K S"
+    },
+    {
+      "username": "3761",
+      "password": "1808",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Harshavardhan Gopalakrishnan"
+    },
+    {
+      "username": "2047",
+      "password": "2495",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Jayanth C B"
+    },
+    {
+      "username": "2048",
+      "password": "3663",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Jayathrathan S M"
+    },
+    {
+      "username": "2051",
+      "password": "4246",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Kavin Ramasamy P V"
+    },
+    {
+      "username": "2134",
+      "password": "9042",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Khrisha B"
+    },
+    {
+      "username": "2136",
+      "password": "8561",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Ksharaathmika G S"
+    },
+    {
+      "username": "2140",
+      "password": "4025",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Maanya R Jain"
+    },
+    {
+      "username": "1989",
+      "password": "2519",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Nathan Prakash Muralidharan"
+    },
+    {
+      "username": "2148",
+      "password": "9591",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Naveena P"
+    },
+    {
+      "username": "2059",
+      "password": "1682",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Neeraj J P"
+    },
+    {
+      "username": "2175",
+      "password": "7854",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Nisvanth T S"
+    },
+    {
+      "username": "2062",
+      "password": "2909",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Nithinkumaran Ravichandran"
+    },
+    {
+      "username": "2654",
+      "password": "4806",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Prashanth Arunmozhi"
+    },
+    {
+      "username": "2067",
+      "password": "1454",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Ragauv Sairam R S"
+    },
+    {
+      "username": "4243",
+      "password": "2508",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Sanjay M"
+    },
+    {
+      "username": "3295",
+      "password": "2411",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sanjay R"
+    },
+    {
+      "username": "2653",
+      "password": "2269",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Sanjiith S"
+    },
+    {
+      "username": "2085",
+      "password": "0433",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Shreyansh Bafna"
+    },
+    {
+      "username": "3126",
+      "password": "1574",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Subash Chandra Bose G"
+    },
+    {
+      "username": "2091",
+      "password": "2477",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Sukrit S Gidnavar"
+    },
+    {
+      "username": "2093",
+      "password": "0992",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Tanish Jain"
+    },
+    {
+      "username": "2167",
+      "password": "8310",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Tejasvi S"
+    },
+    {
+      "username": "3790",
+      "password": "9417",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Vidhuritha K"
+    },
+    {
+      "username": "2171",
+      "password": "6786",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Visruthi R S"
+    },
+    {
+      "username": "2106",
+      "password": "4730",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Yaal Venthan S K"
+    },
+    {
+      "username": "3783",
+      "password": "4911",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Aadees M"
+    },
+    {
+      "username": "2026",
+      "password": "7120",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Abishekkanna S"
+    },
+    {
+      "username": "2022",
+      "password": "6733",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Adhav K"
+    },
+    {
+      "username": "2029",
+      "password": "7064",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Adithya V"
+    },
+    {
+      "username": "2460",
+      "password": "0147",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Aruna Shivani I S"
+    },
+    {
+      "username": "2037",
+      "password": "5234",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Darshan H B"
+    },
+    {
+      "username": "2117",
+      "password": "3050",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Dharannika G R"
+    },
+    {
+      "username": "4224",
+      "password": "xxxx",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Dhiya Shree S"
+    },
+    {
+      "username": "2126",
+      "password": "1517",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Ishwarya S"
+    },
+    {
+      "username": "2130",
+      "password": "4801",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Januskasri Balachandran"
+    },
+    {
+      "username": "2049",
+      "password": "6458",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Joshua Daniel S"
+    },
+    {
+      "username": "2131",
+      "password": "8459",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Jyotsna J"
+    },
+    {
+      "username": "3561",
+      "password": "0065",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Kashika K"
+    },
+    {
+      "username": "2132",
+      "password": "2581",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Kavya S A"
+    },
+    {
+      "username": "2133",
+      "password": "1885",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Keerthisri S"
+    },
+    {
+      "username": "3771",
+      "password": "4490",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Lakshanna M"
+    },
+    {
+      "username": "2139",
+      "password": "2167",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Lalitha Sri M"
+    },
+    {
+      "username": "2141",
+      "password": "8783",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Madhulika Mohandass Balaji"
+    },
+    {
+      "username": "2147",
+      "password": "4086",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Nandhana Velrajan"
+    },
+    {
+      "username": "2066",
+      "password": "1024",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Pranesh Ramana K"
+    },
+    {
+      "username": "4244",
+      "password": "2153",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Prathiksha S"
+    },
+    {
+      "username": "2068",
+      "password": "0685",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Rahunandhan K"
+    },
+    {
+      "username": "2072",
+      "password": "8504",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Rishwanth G J"
+    },
+    {
+      "username": "3750",
+      "password": "7878",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sai Ananya Karthik"
+    },
+    {
+      "username": "2154",
+      "password": "9184",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sakthi Vijayakumar"
+    },
+    {
+      "username": "2079",
+      "password": "9947",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Sanjeev Nanjaiah S"
+    },
+    {
+      "username": "4403",
+      "password": "xxxx",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Sanju Sree S"
+    },
+    {
+      "username": "2657",
+      "password": "5387",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Shaashwath S"
+    },
+    {
+      "username": "2158",
+      "password": "5829",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Shamyuktha N"
+    },
+    {
+      "username": "2435",
+      "password": "7799",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Shathvik M R"
+    },
+    {
+      "username": "2159",
+      "password": "0118",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Shrinica R"
+    },
+    {
+      "username": "4409",
+      "password": "xxxx",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Sivapriyan"
+    },
+    {
+      "username": "3972",
+      "password": "2016",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Thanushka Tamilvannan"
+    },
+    {
+      "username": "3127",
+      "password": "4962",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Uva Sree R"
+    },
+    {
+      "username": "4261",
+      "password": "2885",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Varsha K A"
+    },
+    {
+      "username": "4395",
+      "password": "4191",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Aathreya S"
+    },
+    {
+      "username": "2024",
+      "password": "8308",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Abhinav K"
+    },
+    {
+      "username": "4404",
+      "password": "xxxx",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Akilesh G"
+    },
+    {
+      "username": "2033",
+      "password": "9806",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Arnav"
+    },
+    {
+      "username": "2034",
+      "password": "6535",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Ashwanth N"
+    },
+    {
+      "username": "4406",
+      "password": "xxxx",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Athnu Shripal Arun"
+    },
+    {
+      "username": "2038",
+      "password": "0116",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Darshan S"
+    },
+    {
+      "username": "2040",
+      "password": "7899",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Dhairya Bagri"
+    },
+    {
+      "username": "2042",
+      "password": "7915",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Dhureen"
+    },
+    {
+      "username": "2119",
+      "password": "7359",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Diya Karthik"
+    },
+    {
+      "username": "3772",
+      "password": "2929",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Hariprasad Suraj"
+    },
+    {
+      "username": "2043",
+      "password": "5389",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Harish V"
+    },
+    {
+      "username": "2045",
+      "password": "8012",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Harshit Jain"
+    },
+    {
+      "username": "2129",
+      "password": "3584",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Jaine Shri K"
+    },
+    {
+      "username": "2469",
+      "password": "7218",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Keerthana Krishnan"
+    },
+    {
+      "username": "2135",
+      "password": "3913",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Krishita D J"
+    },
+    {
+      "username": "2137",
+      "password": "9182",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Labdhi P Jain"
+    },
+    {
+      "username": "2138",
+      "password": "3599",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Lakshita G"
+    },
+    {
+      "username": "2054",
+      "password": "6470",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Mayank Belel"
+    },
+    {
+      "username": "2865",
+      "password": "7562",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Mayashrie H D"
+    },
+    {
+      "username": "2145",
+      "password": "8641",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Misti Jain"
+    },
+    {
+      "username": "2055",
+      "password": "2705",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Mithun Senddur V"
+    },
+    {
+      "username": "3757",
+      "password": "5210",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Moksh Jain C"
+    },
+    {
+      "username": "3073",
+      "password": "9097",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Nebin Bose B"
+    },
+    {
+      "username": "2061",
+      "password": "5470",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Nirdesh Agrawal"
+    },
+    {
+      "username": "4394",
+      "password": "7523",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Rayah G"
+    },
+    {
+      "username": "2233",
+      "password": "9608",
+      "house": "Pine",
+      "voted": false,
+      "realname": "Reshmi Valliammai S"
+    },
+    {
+      "username": "2151",
+      "password": "7714",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Ria Shree A"
+    },
+    {
+      "username": "2070",
+      "password": "xxxx",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Rishaan R Ranka"
+    },
+    {
+      "username": "4384",
+      "password": "0082",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Riya Xavier"
+    },
+    {
+      "username": "2077",
+      "password": "0581",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sandhuru T"
+    },
+    {
+      "username": "4246",
+      "password": "9482",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sanjay E R"
+    },
+    {
+      "username": "2080",
+      "password": "9526",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Sanjit Lakshan S S"
+    },
+    {
+      "username": "2087",
+      "password": "2228",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Siddhanth M"
+    },
+    {
+      "username": "2163",
+      "password": "6447",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Sreenidhi Raghuraman"
+    },
+    {
+      "username": "4249",
+      "password": "8597",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Sukesh M"
+    },
+    {
+      "username": "2096",
+      "password": "7463",
+      "house": "Oak",
+      "voted": false,
+      "realname": "Tharan Vishwanth H"
+    },
+    {
+      "username": "2170",
+      "password": "3709",
+      "house": "Maple",
+      "voted": false,
+      "realname": "Vidhi Bagdi"
+    },
+    {
+      "username": "2172",
+      "password": "9498",
+      "house": "Cedar",
+      "voted": false,
+      "realname": "Yashvi Chabria M"
     }
-]
+  ]
