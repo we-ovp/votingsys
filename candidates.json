@@ -13,9 +13,6 @@
       "oak_house_captain": [
         { "name": "Haashini Priya CP", "image": "https://i.postimg.cc/CKRW0T2m/1000089600.jpg" },
         { "name": "Mythi", "image": "https://i.postimg.cc/L5FdvCNv/1000089602.jpg" }
-      ],
-      "oak_vice_captain": [
-        { "name": "oak vice captain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ]
     },
     "pine": {
@@ -30,9 +27,6 @@
       ]
     },
     "maple": {
-      "maple_house_captain": [
-        { "name": "Prithvi GN", "image": "https://i.postimg.cc/hj9P1dKF/0.jpg" }
-      ],
       "maple_vice_captain": [
         { "name": "Ishan Jain", "image": "https://i.postimg.cc/9FzPJmw8/1000089608.jpg" },
         { "name": "Sahana S", "image": "https://i.postimg.cc/pXdC4Q4B/1000089610.jpg" }

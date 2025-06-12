@@ -3,19 +3,22 @@
         "username": "student1",
         "password": "pass1",
         "house": "oak",
-        "voted": true
+        "voted": true,
+        "realname": "Ethan Walker"
     },
     {
         "username": "student2",
         "password": "pass2",
         "house": "pine",
-        "voted": true
+        "voted": true,
+        "realname": "Chloe Bennett"
     },
     {
         "username": "student3",
         "password": "pass3",
         "house": "maple",
-        "voted": false
+        "voted": true,
+        "realname": "Lucas Hayes"
     },
     {
         "username": "admin",
@@ -26,36 +29,43 @@
         "username": "student4",
         "password": "pass4",
         "house": "oak",
-        "voted": true
+        "voted": false,
+        "realname": "Ava Mitchell"
     },
     {
         "username": "student5",
         "password": "pass5",
         "house": "cedar",
-        "voted": true
+        "voted": false,
+        "realname": "Mason Carter"
     },
     {
         "username": "student6",
         "password": "pass6",
         "house": "maple",
-        "voted": false
+        "voted": false,
+        "realname": "Harper Collins"
     },
     {
         "username": "student7",
         "password": "pass7",
         "house": "oak",
-        "voted": false
+        "voted": false,
+        "realname": "Liam Brooks"
     },
     {
+        "name": "hello",
         "username": "student8",
         "password": "pass8",
         "house": "pine",
-        "voted": false
+        "voted": false,
+        "realname": "Isabella James"
     },
     {
         "username": "student9",
         "password": "pass9",
         "house": "cedar",
-        "voted": false
+        "voted": true,
+        "realname": "Noah Thompson"
     }
 ]

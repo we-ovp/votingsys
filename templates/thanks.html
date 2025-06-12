@@ -6,17 +6,33 @@
         html, body {
             height: 100%;
             margin: 0;
+            padding: 0;
+            overflow: hidden; /* 👈 Removes scrollbar */
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            overflow: hidden;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Canon-Canon_EOS_5DS_R-8688x5792-000037.jpg/2560px-Canon-Canon_EOS_5DS_R-8688x5792-000037.jpg'); /* Replace if needed */
+            background-size: cover;
+            background-position: center;
         }
 
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            filter: blur(8px); /* 👈 Blur effect */
+            z-index: -1;
+        }
+        
         .button {
             margin-top: 30px;
             padding: 10px 20px;
@@ -33,14 +49,22 @@
             background-color: #0056b3;
         }
 
+
         footer {
-            position: absolute;
-            bottom: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
             text-align: center;
             font-size: 14px;
-            color: #888;
+            color: #f1f1f1;
+            background-color: rgba(50, 50, 50, 0.6); /* 👈 Semi-transparent grey */
+            padding: 10px 0;
+            z-index: 1;
+            backdrop-filter: blur(4px); /* Optional: subtle blur behind text */
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
         }
+
     </style>
 </head>
 <body>

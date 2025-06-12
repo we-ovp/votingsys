@@ -15,12 +15,21 @@
             padding: 60px 20px;
         }
 
-        h1 {
+        h1, h2 {
             text-align: center;
-            font-size: 42px;
             color: #ff4747;
-            margin-bottom: 50px;
             text-shadow: 2px 2px #000;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-top: 80px;
+            margin-bottom: 30px;
         }
 
         .role-section {
@@ -33,8 +42,8 @@
             padding: 25px 30px;
         }
 
-        .role-section h2 {
-            font-size: 26px;
+        .role-section h3 {
+            font-size: 24px;
             color: #ffffff;
             margin-bottom: 20px;
             border-bottom: 2px solid #ff4747;
@@ -59,6 +68,46 @@
         .results-list li:hover {
             background: #3a3a3a;
         }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            border-collapse: collapse;
+            background-color: #1b1b1b;
+            color: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(255, 71, 71, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff4747;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #292929;
+        }
+
+        tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        .voted {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .not-voted {
+            color: #ff4c4c;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +115,7 @@
 
     {% for role, candidates in results.items() %}
         <div class="role-section">
-            <h2>{{ role.replace("_", " ").title() }}</h2>
+            <h3>{{ role.replace("_", " ").title() }}</h3>
             <ul class="results-list">
                 {% for name, count in candidates.items() %}
                     <li>{{ name }}: {{ count }} votes</li>
@@ -75,5 +124,30 @@
         </div>
     {% endfor %}
 
+    <h2>Voter Status</h2>
+    <table>
+        <tr>
+            <th>AdmNo</th>
+            <th>Name</th>
+            <th>House</th>
+            <th>Status</th>
+        </tr>
+        {% for voter in voters %}
+            {% if voter.username != 'admin' %}
+            <tr>
+                <td>{{ voter.username }}</td>
+                <td>{{ voter.realname }}</td>
+                <td>{{ voter.house }}</td>
+                <td>
+                    {% if voter.voted %}
+                        <span class="voted">Voted</span>
+                    {% else %}
+                        <span class="not-voted">Not Voted</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
 </body>
 </html>

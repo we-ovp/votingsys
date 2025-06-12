@@ -90,9 +90,10 @@ def voting_house():
 
 @app.route('/thanks')
 def thanks():
-    name = session.get('user', {}).get('username', 'Voter')
+    user = session.get('user', {})
+    realname = user.get('realname', user.get('username', 'Voter'))
     session.clear()
-    return render_template('thanks.html', name=name)
+    return render_template('thanks.html', name=realname)
 
 @app.route('/admin')
 def admin():
@@ -100,7 +101,7 @@ def admin():
         return redirect('/')
     with open('results.json') as f:
         results = json.load(f)
-    return render_template('admin.html', results=results)
+    return render_template('admin.html', results=results, voters=VOTERS)
 
 if __name__ == "__main__":
     app.run(debug=True)
