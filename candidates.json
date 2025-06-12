@@ -11,8 +11,8 @@
     },
     "oak": {
       "oak_house_captain": [
-        { "name": "Haashini Priya CP", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Mythi", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Haashini Priya CP", "image": "https://i.postimg.cc/CKRW0T2m/1000089600.jpg" },
+        { "name": "Mythi", "image": "https://i.postimg.cc/L5FdvCNv/1000089602.jpg" }
       ],
       "oak_vice_captain": [
         { "name": "oak vice captain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
@@ -21,8 +21,8 @@
     "pine": {
       "pine_house_captain": [
         { "name": "Mahi Kishore Sethia", "image": "https://i.postimg.cc/vZfYsn64/1000089592-3.jpg" },
-        { "name": "Shri Varsha M", "image": "https://i.postimg.cc/1tfRbj0Q/1000089604.jpg" },
-        { "name": "Samiksha Rajesh", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Shri Varsha M", "image": "https://i.postimg.cc/wxRTVnT5/1000089594.jpg" },
+        { "name": "Samiksha Rajesh", "image": "https://i.postimg.cc/c1RP0cDy/1000089598.jpg" }
       ],
       "pine_vice_captain": [
         { "name": "Suryaa V", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
@@ -34,14 +34,14 @@
         { "name": "Prithvi GN", "image": "https://i.postimg.cc/hj9P1dKF/0.jpg" }
       ],
       "maple_vice_captain": [
-        { "name": "Ishan Jain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Sahana S", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Ishan Jain", "image": "https://i.postimg.cc/9FzPJmw8/1000089608.jpg" },
+        { "name": "Sahana S", "image": "https://i.postimg.cc/pXdC4Q4B/1000089610.jpg" }
       ]
     },
     "cedar": {
       "cedar_house_captain": [
-        { "name": "Pragadi N", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Prakalya M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Pragadi N", "image": "https://i.postimg.cc/1tfRbj0Q/1000089604.jpg" },
+        { "name": "Prakalya M", "image": "https://i.postimg.cc/ydXn4L7L/1000089606.jpg" }
       ],
       "cedar_vice_captain": [
         { "name": "Gaurav Agarwal", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
