@@ -1,12 +1,12 @@
 {
     "common": {
       "boy_prefect": [
-        { "name": "Moksh V Bhandari", "image": "https://i.pinimg.com/736x/31/cc/a2/31cca25cf85c43aa7d59ad80573758e7.jpg" },
+        { "name": "Moksh V Bhandari", "image": "https://i.postimg.cc/6QfmVWFj/0.jpg" },
         { "name": "Ajay Jagath SK", "image": "https://i.postimg.cc/ZRyytnZj/0.jpg" }
       ],
       "girl_prefect": [
         { "name": "Haritha Jaikumar", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
-        { "name": "Deeya Barik", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Deeya Barik", "image": "https://i.postimg.cc/y8MHp8Q7/0.jpg" }
       ]
     },
     "oak": {
@@ -20,8 +20,8 @@
     },
     "pine": {
       "pine_house_captain": [
-        { "name": "Mahi Kishore Sethia", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Shri Varsha M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
+        { "name": "Mahi Kishore Sethia", "image": "https://i.postimg.cc/vZfYsn64/1000089592-3.jpg" },
+        { "name": "Shri Varsha M", "image": "https://i.postimg.cc/1tfRbj0Q/1000089604.jpg" },
         { "name": "Samiksha Rajesh", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
       ],
       "pine_vice_captain": [
@@ -31,7 +31,7 @@
     },
     "maple": {
       "maple_house_captain": [
-        { "name": "Prithvi GN", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Prithvi GN", "image": "https://i.postimg.cc/hj9P1dKF/0.jpg" }
       ],
       "maple_vice_captain": [
         { "name": "Ishan Jain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
