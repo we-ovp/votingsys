@@ -3,21 +3,21 @@
         "username": "student1",
         "password": "pass1",
         "house": "oak",
-        "voted": true,
+        "voted": false,
         "realname": "Ethan Walker"
     },
     {
         "username": "student2",
         "password": "pass2",
         "house": "pine",
-        "voted": true,
+        "voted": false,
         "realname": "Chloe Bennett"
     },
     {
         "username": "student3",
         "password": "pass3",
         "house": "maple",
-        "voted": true,
+        "voted": false,
         "realname": "Lucas Hayes"
     },
     {
@@ -65,7 +65,7 @@
         "username": "student9",
         "password": "pass9",
         "house": "cedar",
-        "voted": true,
+        "voted": false,
         "realname": "Noah Thompson"
     }
 ]
