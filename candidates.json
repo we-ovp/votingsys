@@ -5,14 +5,14 @@
         { "name": "Ajay Jagath SK", "image": "https://i.postimg.cc/ZRyytnZj/0.jpg" }
       ],
       "girl_prefect": [
-        { "name": "Haritha Jaikumar", "image": "https://i.pinimg.com/236x/f9/8b/26/f98b26ab1a70baa06a3c6e11140605cd.jpg" },
+        { "name": "Haritha Jaikumar", "image": "https://i.postimg.cc/15XCFbxp/0.png" },
         { "name": "Deeya Barik", "image": "https://i.postimg.cc/y8MHp8Q7/0.jpg" }
       ]
     },
     "oak": {
       "oak_house_captain": [
         { "name": "Haashini Priya CP", "image": "https://i.postimg.cc/CKRW0T2m/1000089600.jpg" },
-        { "name": "Mythi", "image": "https://i.postimg.cc/L5FdvCNv/1000089602.jpg" }
+        { "name": "Mythili RK", "image": "https://i.postimg.cc/L5FdvCNv/1000089602.jpg" }
       ]
     },
     "pine": {
@@ -22,8 +22,8 @@
         { "name": "Samiksha Rajesh", "image": "https://i.postimg.cc/c1RP0cDy/1000089598.jpg" }
       ],
       "pine_vice_captain": [
-        { "name": "Suryaa V", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Afsana Neha Rabbani", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Suryaa V", "image": "https://i.postimg.cc/k5m2r3q8/0.jpg" },
+        { "name": "Afsana Neha Rabbani", "image": "https://i.postimg.cc/4ySYjYxN/0.jpg" }
       ]
     },
     "maple": {
@@ -38,9 +38,9 @@
         { "name": "Prakalya M", "image": "https://i.postimg.cc/ydXn4L7L/1000089606.jpg" }
       ],
       "cedar_vice_captain": [
-        { "name": "Gaurav Agarwal", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Aninditha M", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" },
-        { "name": "Laksh Jain", "image": "https://i.pinimg.com/736x/99/c7/d9/99c7d9339ebb1e8cdb67547043479f49.jpg" }
+        { "name": "Gaurav Agarwal", "image": "https://i.postimg.cc/sX2Dy38B/mail-google.jpg" },
+        { "name": "Aninditha M", "image": "https://i.postimg.cc/T32sthWW/0.jpg" },
+        { "name": "Laksh Jain", "image": "https://i.postimg.cc/Dwd2XW3J/0.jpg" }
       ]
     }
   }
