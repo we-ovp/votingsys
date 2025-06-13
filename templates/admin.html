@@ -125,6 +125,11 @@
     {% endfor %}
 
     <h2>Voter Status</h2>
+    <h2>Voter Status</h2>
+    <p style="text-align:center; font-size:18px; margin-top:-20px; margin-bottom:40px;">
+        Total Voted: {{ voters | selectattr('voted') | list | length }} /
+        {{ voters | rejectattr('username', 'equalto', 'admin') | list | length }}
+    </p>
     <table>
         <tr>
             <th>AdmNo</th>
