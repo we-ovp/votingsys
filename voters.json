@@ -4483,6 +4483,62 @@
     "house": "maple",
     "voted": false,
     "realname": "Yash Bucha S"
+  },
+  {
+    "username": "dummyoak1",
+    "password": "passoak1",
+    "house": "oak",
+    "voted": false,
+    "realname": "oak student"
+  },
+  {
+    "username": "dummyoak2",
+    "password": "passoak2",
+    "house": "oak",
+    "voted": false,
+    "realname": "oak student"
+  },
+  {
+    "username": "dummycedar1",
+    "password": "passcedar1",
+    "house": "cedar",
+    "voted": false,
+    "realname": "cedar student"
+  },
+  {
+    "username": "dummycedar2",
+    "password": "passcedar2",
+    "house": "cedar",
+    "voted": false,
+    "realname": "cedar student"
+  },
+  {
+    "username": "dummymaple1",
+    "password": "passmaple1",
+    "house": "maple",
+    "voted": false,
+    "realname": "maple student"
+  },
+  {
+    "username": "dummymaple2",
+    "password": "passmaple2",
+    "house": "maple",
+    "voted": false,
+    "realname": "maple student"
+  },
+  {
+    "username": "dummypine1",
+    "password": "passpine1",
+    "house": "pine",
+    "voted": false,
+    "realname": "pine student"
+  },
+  {
+    "username": "dummypine2",
+    "password": "passpine2",
+    "house": "pine",
+    "voted": false,
+    "realname": "pine student"
   }
 ]
 
